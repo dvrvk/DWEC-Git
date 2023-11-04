@@ -1,0 +1,522 @@
+
+<html>
+    <head>
+        <title>Ejercicios DWEC01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <section>
+            <h2>Números</h2>
+            <p>Solicite dos números y muestre la suma</p>
+            <form id="form1">
+                <label for="n1">n1</label>
+                <input type="number" name="op1" id="n1">
+                <label for="n1">n2</label>
+                <input type="number" name="op2" id="n2">
+                = 
+                <input type="number" name="res" id="res" readonly>
+                <input type="submit" value="Sumar">
+            </form>
+            <p>Solicite dos números y muestre el mayor de ellos</p>
+            <form id="form2">
+                <label for="n3">n1</label>
+                <input type="number" name="op3" id="n3">
+                <label for="n4">n2</label>
+                <input type="number" name="op4" id="n4">
+                = 
+                <input type="number" name="res1" id="res1" readonly>
+                <input type="submit" value="Mayor">
+            </form>
+            <p>3. Solicite un número y lo divida por 2, por 4 y por 8</p>
+            <form id="form3">
+                <label for="n5">n1</label>
+                <input type="number" name="op5" id="n5">
+                <ul id="res3"></ul>
+                <input type="submit" value="Dividir">
+            </form>
+            <p>4. Solicite un número e indique si es par o impar</p>
+            <form id="form4">
+                <label for="esPar">Número</label>
+                <input type="number" name="esPar" id="esPar">
+                <p id="esParRes"></p>
+                <input type="submit" value="¿Par o impar?">
+            </form>
+            <p>5. Solicite un número y muestre una cuenta atrás</p>
+            <form id="form5">
+                <label for="numCuenta">Inicio cuenta</label>
+                <input type="number" name="numCuenta" id="numCuenta">
+                <p id="numCuentaRes"></p>
+                <input type="submit" value="Cuenta atrás">
+            </form>
+            <p>6 Solicite tres números y muestre el menor de ellos. Realizar el mismo ejercicio para n números y mostrar el mayor</p>
+            <form id="form6">
+                <label for="f6_num">n1</label>
+                <input type="text" name="f6_num1" id="f6_num">
+                <p id="f6_res"></p>
+                <input type="submit" value="Menor">
+            </form>
+            <p>7. Solicite tres números y muestre el central, si no hay uno central, debe advertirlo</p>
+            <form id="form7">
+                <label for="f7_num">Introduce tres números, separados por coma</label>
+                <input type="text" name="f7_num1" id="f7_num">
+                <p id="f7_res"></p>
+                <input type="submit" value="Central">
+            </form>
+            <p>8. Solicite cuatro números y los muestre en orden</p>
+            <form id="form8">
+                <label for="f8_num">Introduce cuatro números, separados por coma</label>
+                <input type="text" name="f8_num1" id="f8_num">
+                <p id="f8_res"></p>
+                <input type="submit" value="Ordenar">
+            </form>
+            <p>9. Media aritmética (intruduce número negativo para finalizar)</p>
+            <form id="form9">
+                <label>Pulsa el botón para introducir números</label>
+                <p id="f9_res"></p>
+                <input type="submit" value="Media">
+            </form>
+
+            <p>10. Introduce números enteros y devuelvo histograma (intruduce número 0 para finalizar)</p>
+            <form id="form10">
+                <label>Pulsa el botón para introducir números e introduce 0 para finalizar</label>
+                <p id="f10_res1"></p>
+                <p id="f10_res2"></p>
+                <input type="submit" value="Histograma">
+            </form>
+
+            <p>11. Calcular IMC</p>
+            <form id="form11">
+                <label for="peso">Peso</label>
+                <input type="text" name="peso" id="peso">
+
+                <label for="altura">Altura (cm)</label>
+                <input type="text" name="altura" id="altura">
+
+                <p id="f11_res"></p>
+                <input type="submit" value="IMC">
+            </form>
+
+            <p>12. Suma de naturales hasta el número introducido</p>
+            <form id="form12">
+                <label for="f12_num">Número entero</label>
+                <input type="text" name="f12_num" id="f12_num">
+
+                <p id="f12_res"></p>
+                <input type="submit" value="Sumar">
+            </form>
+
+            <p>13. Suma entre dos números naturales</p>
+            <form id="form13">
+                <label for="f13_num1">Número 1</label>
+                <input type="text" name="f13_num1" id="f13_num1">
+
+                <label for="f13_num1">Número 2</label>
+                <input type="text" name="f13_num2" id="f13_num2">
+
+                <p id="f13_res"></p>
+                <input type="submit" value="Sumar">
+            </form>
+
+            <p>14. Solicite una hora del día al usuario entre las 0 y las 11 y un número de horas. Se mostrará que hora indicará el reloj pasadas ese número de horas</p>
+            <form id="form14">
+                <label for="f14_num1">Hora actual (entre 0 - 11)</label>
+                <input type="text" name="f14_num1" id="f14_num1">
+
+                <label for="f14_num2">Número de horas a contar</label>
+                <input type="text" name="f14_num2" id="f14_num2">
+
+                <p id="f14_res"></p>
+                <input type="submit" value="Sumar Horas">
+            </form>
+
+            <p>15. Solicite un número al usuario y muestre todos sus múltiplos del 0 al 100</p>
+            <form id="form15">
+                <label for="f15_num1">Número</label>
+                <input type="text" name="f15_num1" id="f15_num1">
+
+                <p id="f15_res"></p>
+                <input type="submit" value="Múltiplos">
+            </form>
+
+            <p>16. Solicite un número y muestre el número de dígitos que lo forman</p>
+            <form id="form16">
+                <label for="f16_num1">Número</label>
+                <input type="text" name="f16_num1" id="f16_num1">
+
+                <p id="f16_res"></p>
+                <input type="submit" value="Contar Dígitos">
+            </form>
+
+            <p>17. Solicite un número y muestre sus dígitos invertidos</p>
+            <form id="form17">
+                <label for="f17_num1">Número</label>
+                <input type="text" name="f17_num1" id="f17_num1">
+
+                <p id="f17_res"></p>
+                <input type="submit" value="Reverso">
+            </form>
+
+            <p>18. Solicite un importe e indique el importe con IVA</p>
+            <form id="form18">
+                <label for="f18_num1">Importe</label>
+                <input type="text" name="f18_num1" id="f18_num1">
+
+                <p id="f18_res"></p>
+                <input type="submit" value="Calcular">
+            </form>
+
+            <p>19. Solicite un importe con IVA y lo indique sin IVA</p>
+            <form id="form19">
+                <label for="f19_num1">Importe con IVA</label>
+                <input type="text" name="f19_num1" id="f19_num1">
+
+                <p id="f19_res"></p>
+                <input type="submit" value="Calcular">
+            </form>
+
+            <p>20. Solicite un año e indique si es bisiesto o no</p>
+            <form id="form20">
+                <label for="f20_num1">Año</label>
+                <input type="text" name="f20_num1" id="f20_num1">
+
+                <p id="f20_res"></p>
+                <input type="submit" value="Calcular">
+            </form>
+
+            <p>21. Solicite duraciones de tramos de viaje en minutos (hasta que se introduzca un cero o un valor negativo) y muestre la duración del viaje en horas y minutos </p>
+            <form id="form21">
+                <label for="f21_num1">Duracion</label>                                        
+                <p id="f21_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>22. Solicite un número y muestre la parte decimal</p>
+		<form id="form22">
+			<input type="text" name="f22_num" id="f22_num">
+			<input type="text" name="f22_res" id="f22_res">
+			<input type="submit" value="Sacar Decimales">
+		</form>
+
+		<p>23. Solicite un número y muestre la parte entera</p>
+		<form id="form23">
+			<input type="text" name="f23_num" id="f23_num">
+			<input type="text" name="f23_res" id="f23_res">
+			<input type="submit" value="Truncar">
+		</form>
+
+		<p>24. Solicite dos números y calcule su división indicando si es exacta o no.</p>
+		<form id="form24">
+			<label>dividendo</label>
+			<input type="text" name="f24_num1" id="f24_num1">
+			<label>divisor</label>
+			<input type="text" name="f24_num2" id="f24_num2">
+			<label>Resultado</label>
+			<input type="text" name="f24_res" id="f24_res">
+			<label>¿Es exacta?</label>
+			<input type="text" name="f24_res2" id="f24_res2">
+			<input type="submit" value="Dividir">
+		</form>
+
+		<p>25. Solicite una base y exponente y calcule la potencia </p>
+		<form id="form25">
+			<label>base</label>
+			<input type="text" name="f25_bas" id="f25_bas">
+			<label>exponente</label>
+			<input type="text" name="f25_exp" id="f25_exp">
+			<label>resultado</label>
+			<input type="text" name="f25_res" id="f25_res">
+			<input type="submit" value="Potencia">
+		</form>
+
+		<p>26. Solicite un número al usuario y muestre todas las potencias de dos desde la 0-ésima hasta a ingresada por el usuario.</p>
+		<form id="form26">
+			<label>Número</label>
+			<input type="text" name="f26_num" id="f26_num">
+			<ul id="f26_res"></ul>
+			<input type="submit" value="Potencias 2">
+		</form>
+
+		<p>27. Solicite un número y muestre su factorial</p>
+		<form id="form27">
+			<label>Número</label>
+			<input type="text" name="f27_num" id="f27_num">
+			<label>Factorial</label>
+			<input type="text" name="f27_res" id="f27_res">
+			<input type="submit" value="Factorial">
+		</form>
+
+		<p>28. Solicite dos números y muestre su coeficiente binomial</p>
+		<form id="form28">
+			<label>n</label>
+			<input type="text" name="f28_num1" id="f28_num1">
+			<label>k</label>
+			<input type="text" name="f28_num2" id="f28_num2">
+			<label> = Coeficiente binomial</label>
+			<input type="text" name="f28_res" id="f28_res">
+			<input type="submit" value="Calcular">
+		</form>
+
+		<p>30. Muestre las distintas combinaciones al lanzar dos dados</p>
+		<form id="form30">
+			<input type="text" name="f30_res1" id="f30_res1">
+			<input type="text" name="f30_res2" id="f30_res2">
+			<input type="submit" value="Tirar Dados">
+		</form>
+
+		<p>31. Solicite un número y muestre el numero de combinaciones que existen para obtener ese número lanzando dos dados y sumando sus puntuaciones</p>
+		<form id="form31">
+			<label>Número</label>
+			<input type="text" name="f31_num" id="f31_num">
+			<label>Combinaciones</label>
+			<input type="text" name="f31_res" id="f31_res">
+			<input type="submit" value="Calcular">
+		</form>
+
+
+		<p>32. Solicite un número en base decimal y lo muestre en binario, octal y hexadecima</p>
+		<form id="form32">
+			<label>Número decimal</label>
+			<input type="text" name="f32_num" id="f32_num">
+			<label>Binario</label>
+			<input type="text" name="f32_res1" id="f32_res1">
+			<label>Octal</label>
+			<input type="text" name="f32_res2" id="f32_res2">
+			<label>Hexadecimal</label>
+			<input type="text" name="f32_res3" id="f32_res3">
+			<input type="submit" value="Transformar">
+		</form>
+
+		<p>33. Solicite un número y muestre la parte entera de su raíz cuadrada</p>
+		<form id="form33">
+			<label>Número</label>
+			<input type="text" name="f33_num" id="f33_num">
+			<label>Parte entera raíz cuadrada</label>
+			<input type="text" name="f33_res" id="f33_res">
+			<input type="submit" value="Calcular">
+		</form>
+
+		<p>34. Solicite un número y muestre todos sus divisores</p>
+		<form id="form34">
+			<label>Número</label>
+			<input type="text" name="f34_num" id="f34_num">
+			<p id="f34_res"></p>
+			<input type="submit" value="Calcular">
+		</form>
+
+            <p>35. Solicite dos números e indique sus divisores comunes.</p>
+            <form id="form35">
+                <label for="f35_num1">Número 1</label>                                   <input type="text" name="f35_num1" id="f35_num1">
+                <label for="f35_num2">Número 2</label>                                   <input type="text" name="f35_num2" id="f35_num2">
+                <p id="f35_res"></p>
+                <input type="submit" value="Divisores">
+            </form>
+
+            <p>36. Juegue al Fizz buzz.</p>
+            <form id="form36">
+                <label for="f36_num1">Número max</label>
+                <input type="text" name="f36_num1" id="f36_num1">
+                <p id="f36_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+
+            <p>37. Solicite un número e indique si es primo o no</p>
+            <form id="form37">
+                <label for="f37_num1">Número</label>
+                <input type="text" name="f37_num1" id="f37_num1">
+                <p id="f37_res"></p>
+                <input type="submit" value="¿Es primo?">
+            </form>
+            
+            <p>38. Solicite dos números y muestre su máximo común divisor</p>
+            <form id="form38">
+                <label for="f38_num1">Número 1 </label>
+                <input type="text" name="f38_num1" id="f38_num1">
+                <label for="f38_num1">Número 2 </label>
+                <input type="text" name="f38_num2" id="f38_num2">
+                <label for="f38_num1">MCD=</label>
+                <input type="text" name="f38_res" id="f38_res">
+                <input type="submit" value="Calcular">
+            </form>
+            
+            <p>39. Solicite un número y lo descomponga en factores primos</p>
+            <form id="form39">
+                <label for="f39_num1">Número 1 </label>
+                <input type="text" name="f39_num1" id="f39_num1">
+                <p id="f39_res"></p>
+                <input type="submit" value="Calcular">
+            </form>
+            
+            <p>40. Solicite un número y calcule la suma de sus dígitos
+</p>
+            <form id="form40">
+                <label for="f40_num1">Número</label>
+                <input type="text" name="f40_num1" id="f40_num1">
+                <label>Suma de digitos = </label>
+                <input type="text" name="f40_res" id="f40_res">
+                <input type="submit" value="Calcular">
+            </form>
+            
+            <p>41. Muestre la tabla de multiplicar</p>
+            <form id="form41">
+                <label for="f41_num1">Número</label>
+                <input type="text" name="f41_num1" id="f41_num1">
+                <ul id="f41_res"></ul>
+                <input type="submit" value="Mostrar">
+            </form>
+            
+            <p>42. Implemente una sencilla calculadora, en la que se solicite el primer operando, un operador aritmético y el segundo operando para mostrar a continuación el resultado </p>
+            <form id="form42">
+                <label for="f42_num1">Operando 1</label>
+                <input type="text" name="f42_num1" id="f42_num1">
+                <label for="f42_op">Operador</label>
+                <input type="text" name="f42_op" id="f42_op">
+                <label for="f42_num2">Operando 2</label>
+                <input type="text" name="f42_num2" id="f42_num2"> = 
+                <input type="text" name="f42_res" id="f42_res">
+                <input type="submit" value="Calcular">
+            </form>
+            
+            <p>43. Solicite números entre 0 y 998 hasta que el usuario introduzca el 999, en ese momento muestra la suma de todos ellos (menos el 999) </p>
+            <form id="form43">
+                <p id="f43_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+ 
+            <p>44. Solicite un número de segundos y muestre este dato en horas, minutos y segundos)</p>
+            <form id="form44">
+                <label for="f44_num1">Número</label>
+                <input type="text" name="f44_num1" id="f44_num1">
+                <p id="f44_res"></p>
+                <input type="submit" value="Calcular">
+            </form>
+            
+            <p>45. Solicite tres números al usuario e indique si forman los lados de un triángulo y en caso afirmativo qué tipo de triángulo</p>
+            <form id="form45">
+                <label for="f45_num1">Lado 1</label>
+                <input type="text" name="f45_num1" id="f45_num1">
+                <label for="f45_num2">Lado 2</label>
+                <input type="text" name="f45_num2" id="f45_num2">
+                <label for="f45_num3">Lado 3</label>
+                <input type="text" name="f45_num3" id="f45_num3">
+                <p id="f45_res"></p>
+                <input type="submit" value="Calcular">
+            </form>
+            
+            <p>46. Solicite números al usuario y muestre cuantos números mayores que cero se han introducido y la suma de todos ellos. Para terminar, el usuario introducirá el cero</p>
+            <form id="form46">
+                <p id="f46_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>47. Calcule el número de años que deben transcurrir para que la suma de las edades de tres hijos de 14, 12 y 9 años sea igual a la edad de su padre que ahora tiene 43 años</p>
+            <form id="form47">
+                <p id="f47_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>48. Solicite las dimensiones de una matriz, y muestre únicamente aquéllas posiciones cuyas coordenadas sean, ambas, impares</p>
+            <form id="form48">
+                <label for="f48_num1">Filas</label>
+                <input type="text" name="f48_num1" id="f48_num1">
+                <label for="f48_num2">Columnas</label>
+                <input type="text" name="f48_num2" id="f48_num2">
+                <p id="f48_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            
+            <p>49. Solicite al usuario un PIN (número de cuatro dígitos) y le ofrezca tres oportunidades
+para introducir el mismo que uno elegido por el desarrollador</p>
+            <form id="form49">
+                <p id="f49_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>50. Solicite el número de horas que se ha trabajado y el número de horas extra y calcule la nómina semanal bruta. La hora normal se paga a 10€ y la extra a 15€</p>
+            <form id="form50">
+                <label for="f50_num1">Horas ordinarias</label>
+                <input type="text" name="f50_num1" id="f50_num1">
+                <label for="f50_num2">Horas extra</label>
+                <input type="text" name="f50_num2" id="f50_num2">
+                <p id="f50_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>51. Solicite la edad de un padre y la de su hijo y muestre el número de años que deben transcurrir hasta que la edad del padre doble a la del hijo</p>
+            <form id="form51">
+                <label for="f51_num1">Edad padre</label>
+                <input type="text" name="f51_num1" id="f51_num1">
+                <label for="f51_num2">Edad hijo</label>
+                <input type="text" name="f51_num2" id="f51_num2">
+                <p id="f51_res"></p>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>52. Solicite un número y muestre el triángulo de Pascal de altura igual al número introducido</p>
+            <form id="form52">
+                <label for="f52_num1">Altura</label>
+                <input type="text" name="f52_num1" id="f52_num1">
+                <div id="f52_res"></div>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>53. Solicite los coeficientes de una ecuación de primer grado y muestre su solución</p>
+            <form id="form53">
+                <label for="f53_num1">Coeficiente a</label>
+                <input type="text" name="f53_num1" id="f53_num1">
+                <label for="f53_num2">Coeficiente b</label>
+                <input type="text" name="f53_num2" id="f53_num2">
+                <div id="f53_res"></div>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>54. Solicite los coeficientes de una ecuación de segundo grado y muestre su solución</p>
+            <form id="form54">
+                <label for="f54_num1">Coeficiente cuadrático (a)</label>
+                <input type="text" name="f54_num1" id="f54_num1">
+                <label for="f54_num2">Coeficiente lineal (b)</label>
+                <input type="text" name="f54_num2" id="f54_num2">
+                <label for="f54_num3">Término independiente (c)</label>
+                <input type="text" name="f54_num3" id="f54_num3">
+                <div id="f54_res"></div>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>55. Solicite al usuario las coordenadas del centro y el radio de dos circunferencias e indique si se cortan o no y en cuantos puntos: IMPORTANTE separa las coordenadas por comas.</p>
+            <form id="form55">
+                <label for="f55_num1">centro1</label>
+                <input type="text" name="f55_num1" id="f55_num1">
+                <label for="f55_num2">radio1</label>
+                <input type="text" name="f55_num2" id="f55_num2">
+                <label for="f55_num1">centro2</label>
+                <input type="text" name="f55_num3" id="f55_num3">
+                <label for="f55_num2">radio2</label>
+                <input type="text" name="f55_num4" id="f55_num4">
+                <div id="f55_res"></div>
+                <input type="submit" value="Empezar">
+            </form>
+            
+            <p>56. Solicite números al usuario entre el 1 y el 100 hasta que se averigüe el que ha elegido el desarrollador. Para ayudar al usuario, cada vez que éste introduzca un
+número, se le indicará si el número a averiguar es mayor o menor que el número introducido. Intercambiar los papeles y que sea ahora el usuario el que elije un número y el programa tratará de adivinarlo</p>
+            <form id="form56">
+                <p id="f56_res"></p>
+                <input type="submit" value="Adivina el número">
+            </form>
+            <form id="form56b">
+                <p id="f56b_res"></p>
+                <input type="submit" value="Te adivino el número">
+            </form>
+            
+            
+            <p>57. Solicite un número y muestre los dígitos de todos los números desde el 0 hasta el solicitado en columnas, por ejemplo, para el número 26:
+            000000000011111111112222222
+            012345678901234567890123456</p>
+            <form id="form57">
+                <p id="f57_res"></p>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        <script src="app.js"></script>
+    </body>
+</html>
