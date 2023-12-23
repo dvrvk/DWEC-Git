@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquillas</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var taquillas = [];
+        var numTaquillasLibres = 0;
+
+        for (let altura = 0; altura < 10; altura++) {
+            taquillas[altura] = new Array(4);
+            for (let posTaquilla = 0; posTaquilla < 4; posTaquilla++) {
+                taquillas[altura][posTaquilla] = "";
+            }
+        }
+
+        for (let altura = 0; altura < taquillas.length; altura++) {
+            for (let posTaquilla = 0; posTaquilla < taquillas[altura].length; posTaquilla++) {
+                if (taquillas[altura][posTaquilla] == "") {
+                    numTaquillasLibres++;
+                }
+            }
+        }
+
+        function ocuparTaq(cantidad) {
+            try {
+                // Seleccionar los nombres y apellidos
+                const alumnos = seleccionarAlumnos(cantidad);
+                // Seleccionar las posiciones
+                if (cantidad > taquillas.length * taquillas[0].length) {
+                    throw new Error(`Error: número máximo de taquillas(${taquillas.length * taquillas[0].length}) excedido.`)
+                } else {
+                    for (let i = 0; i < cantidad; i++) {
+                        let posTaq = seleccionarPosicion();
+                        taquillas[posTaq[0]][posTaq[1]] = alumnos[i];
+                    }
+                    console.table(taquillas);
+                }
+
+            } catch (err) {
+                console.error(err)
+            }
+
+
+        }
+
+        function seleccionarAlumnos(cantidad) {
+            let nombres = ["Luis", "Ana", "Belen", "Ismael", "Pedro", "Juan", "Rodrigo", "Javier", "Jose", "Jesus", "Pilar", "Laura", "Rosa"];
+            let apellidos = ["Perez", "Martin", "Sanz", "Saez", "Ruiz", "Martinez", "Lopez", "de Francisco", "Mohamed", "Madrid", "Gomez", "Muñoz", "Vazquez"];
+
+            let posNombre;
+            let posApellido;
+            let alumnos = [];
+
+            if (cantidad > (nombres.length * apellidos.length)) {
+                throw new Error("Error: cantidad superior a listado de nombres y apellidos")
+            } else {
+                for (let i = 0; i < cantidad; i++) {
+                    do {
+                        posNombre = aleatorio(0, nombres.length - 1);
+                        posApellido = aleatorio(0, nombres.length - 1);
+                    } while (alumnos.includes(nombres[posNombre] + " " + apellidos[posApellido]))
+
+                    // Incorporarlo al array
+                    alumnos.push(nombres[posNombre] + " " + apellidos[posApellido]);;
+                }
+
+                return alumnos;
+            }
+
+        }
+
+        function seleccionarPosicion() {
+            let altura;
+            let posicion;
+
+            do {
+                altura = aleatorio(0, taquillas.length - 1);
+                posicion = aleatorio(0, taquillas[altura].length - 1);
+            } while (taquillas[altura][posicion] !== "");
+
+            return [altura, posicion];
+        }
+
+        function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        ocuparTaq(30);
+    </script>
+</body>
+
+</html>

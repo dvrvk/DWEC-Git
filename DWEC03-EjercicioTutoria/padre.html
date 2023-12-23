@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padre</title>
+</head>
+<body>
+    <input type="text" id="textopadre">
+    <button onclick="crearHijo1()">Crear hijo 1</button>
+    <button onclick="cerrarHijo1()">Cerrar hijo 1</button>
+    <button onclick="crearHijo2()">Crear hijo 2</button>
+    <button onclick="cerrarHijo2()">Cerrar hijo 2</button>
+    <button onclick="mandarHijo1()">Mandar hijo 1</button>
+    <button onclick="mandarNieto1()">Mandar nieto 1</button>
+    <script>
+
+        var hijo1 = null;
+        var hijo2 = null;
+
+        function crearHijo1() {
+            hijo1 = window.open('hijo1.html',"Hijo 1", "height=400,width=400");  
+        }
+
+        function cerrarHijo1() {
+            hijo1.close();
+        }
+
+        function crearHijo2() {
+            hijo2 = window.open('hijo2.html',"Hijo 2", "height=400,width=400");  
+        }
+
+        function cerrarHijo2() {
+            hijo2.close();
+        }
+
+        function mandarHijo1() {
+            hijo1.document.getElementById('textohijo1').value = document.getElementById('textopadre').value;
+            hijo1.focus();
+        }
+
+        function mandarNieto1() {
+            hijo1.nieto1.document.getElementById('textonieto1').value = document.getElementById('textopadre').value;
+        }
+        
+
+    </script>
+</body>
+</html>

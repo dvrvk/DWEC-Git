@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 13 y 14</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="demo"></div>
+        <script>
+            var d = new Date();
+            
+            demo.innerHTML += `<p>Fecha = ${d.toString()}</p>`;
+            demo.innerHTML += `<p>Fecha ISO = ${d.toISOString()}</p>`;
+            demo.innerHTML += `<p>Fecha y hora Greenwich = ${d.toUTCString()}</p>`;
+            demo.innerHTML += `<p>El tiempo en milisegundos desde el 1 de Enero de 1971 = ${d.getTime()}</p>`;
+            demo.innerHTML += `<p>Año completo = ${d.getFullYear()}</p>`;
+            demo.innerHTML += `<p>Mes = ${["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"][d.getMonth()]}</p>`;
+            demo.innerHTML += `<p>Día mes = ${d.getDate()}</p>`;
+            demo.innerHTML += `<p>Día de la semana = ${d.getDay()}</p>`;
+            demo.innerHTML += `<p>Hora = ${d.getHours}</p>`;
+            demo.innerHTML += `<p>Minutos = ${d.getMinutes()}</p>`;
+            demo.innerHTML += `<p>Segundos = ${d.getSeconds()}</p>`;
+            
+            demo.innerHTML += `<h2>Restar 5 a la fecha</h2>`;
+            // IMPORTANTE PORQUE SINO SE PASA POR REFERENCIA - AQUI SE PASA POR VALOR
+            var d2 = new Date(d);
+            d2.setDate(d2.getDate() - 5);
+            
+            demo.innerHTML += `<p>Fecha = ${d2.toString()}</p>`;
+            demo.innerHTML += `<p>Fecha ISO = ${d2.toISOString()}</p>`;
+            demo.innerHTML += `<p>Fecha y hora Greenwich = ${d2.toUTCString()}</p>`;
+            demo.innerHTML += `<p>El tiempo en milisegundos desde el 1 de Enero de 1971 = ${d2.getTime()}</p>`;
+            demo.innerHTML += `<p>Año completo = ${d2.getFullYear()}</p>`;
+            demo.innerHTML += `<p>Mes = ${["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"][d.getMonth()]}</p>`;
+            demo.innerHTML += `<p>Día mes = ${d2.getDate()}</p>`;
+            demo.innerHTML += `<p>Día de la semana = ${d2.getDay()}</p>`;
+            demo.innerHTML += `<p>Hora = ${d2.getHours}</p>`;
+            demo.innerHTML += `<p>Minutos = ${d2.getMinutes()}</p>`;
+            demo.innerHTML += `<p>Segundos = ${d2.getSeconds()}</p>`;
+            
+            demo.innerHTML += `<h2>¿Cual es mayor?</h2>`;
+            if(d > d2){
+                demo.innerHTML += `<p>La primera es mayor que la segunda.</p>`;
+            } else if(d2 > d) {
+                demo.innerHTML += `<p>La segunda es mayor que la primera.</p>`;
+            } else {
+                demo.innerHTML += `<p>Son iguales.</p>`;
+            }
+            
+        </script>
+    </body>
+</html>

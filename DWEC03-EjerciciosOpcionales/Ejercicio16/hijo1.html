@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hijo 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <input type="text" id="caja" name="caja">
+        <button onclick="mandarPadre()">Mandar Padre</button>
+        <button onclick="mandarH2()">Mandar Hermano</button>
+        <script>
+            function mandarPadre() {
+                opener.document.getElementById('caja').value = document.getElementById('caja').value;
+            }
+
+            function mandarH2() {
+                if (opener.v2) {
+                    opener.v2.document.getElementById('caja').value = document.getElementById('caja').value;
+                }
+            }
+        </script>
+    </body>
+</html>

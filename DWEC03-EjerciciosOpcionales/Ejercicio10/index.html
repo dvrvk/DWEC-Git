@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 10</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            button {
+                display: block;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Numero: <span id="numP"></span></p>
+        <input type="text" id="res" name="res">
+        <button onclick="cientifica()">Expresión cientifica</button>
+        <button onclick="redondeo(0)">Redondeo sin decimales (toFixed())</button>
+        <button onclick="redondeo(1)">Redondeo con 1 decimal (toFixed())</button>
+        <button onclick="precision(1)">Precisión 1 (toPrecision())</button>
+        <button onclick="precision(2)">Precisión 2 (toPrecision())</button>
+        <button onclick="precision(3)">Precisión 3 (toPrecision())</button>
+        <button onclick="precision(4)">Precisión 4 (toPrecision())</button>
+        <button onclick="precision(5)">Precisión 5 (toPrecision())</button>
+        <button onclick="precision(6)">Precisión 6 (toPrecision())</button>
+        
+        <script>
+            var num = 123.78;
+            numP.textContent = num;
+            const respuesta = document.getElementById('res');
+            
+            // 1. Un botón que devuelva la expresión científica de este número (utiliza toExponential)
+            function cientifica() {
+                respuesta.value = num.toExponential();
+            }
+            
+            // 2. Un botón que devuelva el número redondeado sin decimales (utiliza toFixed)
+            // 3. Un botón que devuelva el número redondeado con 1decimal (utiliza toFixed)
+            function redondeo(dec) {
+                respuesta.value = num.toFixed(dec);
+            }
+            
+            // 4. Un botón que devuelva el número utilizando 1 dígito (utiliza toPrecision)
+            // 5. Un botón que devuelva el número utilizando 2 dígitos (utiliza toPrecision)
+            // 6. Un botón que devuelva el número utilizando 3 dígitos (utiliza toPrecision)
+            // 7. Un botón que devuelva el número utilizando 4 dígitos (utiliza toPrecision)
+            // 7. Un botón que devuelva el número utilizando 5 dígitos (utiliza toPrecision)
+            // 7. Un botón que devuelva el número utilizando 6 dígitos (utiliza toPrecision)
+            function precision(pre) {
+                respuesta.value = num.toPrecision(pre);
+            }
+                       
+        </script>
+    </body>
+</html>

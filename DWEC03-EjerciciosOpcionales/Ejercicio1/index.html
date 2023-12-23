@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+
+-->
+<html>
+    <head>
+        <title>Principal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <button id="abrir">Abrir Ventana</button>
+        <button id="nombre">Mostrar Nombre</button>
+        <div id="resp_nombre"></div>
+        <button id="cerrar">Cerrar Ventana</button>
+        <button id="isClose">¿Está cerrada?</button>
+        <div id="resp_isClose"></div>
+        <button id="quitar">Quitar foco</button>
+        <button id="poner">Poner foco</button>
+        <button id="url">URL Nueva Ventana</button>
+        <button id="urlP">URL Ventana Principal</button>
+        <button id="borrar">Borrar usuario</button>
+        <button id="propiedades">Propiedades Location</button>
+        <div id="resp_prop"></div>
+        <button id="recargar">Recargar</button>
+        <button id="navigator">Propiedades navigator</button>
+        <details>
+            <summary>appCodeName</summary>
+            Cadena que contiene el nombre en código del navegador.
+        </details>
+        <details>
+            <summary>appName</summary>
+            Cadena que contiene el nombre del cliente.
+        </details>
+        <details>
+            <summary>appVersion</summary>
+            Cadena que contiene información sobre la versión del cliente.
+        </details>
+        <details>
+            <summary>cookieEnabled</summary>
+            Determina si las cookies están o no habilitadas en el navegador.
+        </details>
+        <details>
+            <summary>platform</summary>
+            Cadena con la plataforma sobre la que se está ejecutando el programa cliente.
+        </details>
+        <details>
+            <summary>userAgent</summary>
+            Cadena que contiene la cabecera completa del agente enviada en una petición HTTP. Contiene la información de las propiedades appCodeName y appVersion.
+        </details>
+        <div id="resp_nav"></div>
+        <button id="prop_doc">Propiedades document</button>
+        <div id="resp_prop_doc"></div>
+        <button id="rellenarCookie">Rellenar Cookie</button>
+        <button id="java">¿Permite la ejecución de java?</button>
+        <script src="app.js"></script>
+    </body>
+</html>

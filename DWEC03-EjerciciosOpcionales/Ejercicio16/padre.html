@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Padre</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            main {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                max-width: 50%;
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <input type="text" id="caja" name="caja">
+            <button id="abrir_v1" onclick="crearv1()">Crear Ventana 1</button>
+            <button id="cerrar_v1" onclick="cerrarv1()">Cerrar Ventana 1</button>
+
+            <button id="abrir_v2" onclick="crearv2()">Crear Ventana 2</button>
+            <button id="cerrar_v2" onclick="cerrarv2()">Cerrar Ventana 2</button>
+
+            <button id="mandar_v1" onclick="mandarH1()">Mandar Ventana 1</button>
+            <button id="mandar_v2" onclick="mandarH2()">Mandar Ventana 2</button>
+        </main>
+        <script>
+            var v1 = null;
+            var v2 = null;
+            function crearv1() {
+                v1 = window.open('hijo1.html', 'hijo1', 'height=800,width=600');
+            }
+
+            function crearv2() {
+                v2 = window.open('hijo2.html', 'hijo2', 'height=800,width=600');
+            }
+
+            function cerrarv1() {
+                if (v1) {
+                    v1.close();
+                }
+            }
+
+            function cerrarv2() {
+                if (v2) {
+                    v2.close()
+                }
+            }
+
+            function mandarH1() {
+                if (v1) {
+                    v1.document.getElementById('caja').value = document.getElementById('caja').value;
+                }
+            }
+
+            function mandarH2() {
+                if (v2) {
+                    v2.document.getElementById('caja').value = document.getElementById('caja').value;
+                }
+            }
+
+        </script>
+    </body>
+</html>

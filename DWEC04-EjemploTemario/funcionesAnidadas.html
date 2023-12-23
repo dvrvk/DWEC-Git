@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anidadas</title>
+</head>
+
+<body>
+    <script>
+        function hipotenusa(a, b) {
+            function cuadrado(x) {
+                return x * x;
+            }
+            return Math.sqrt(cuadrado(a) + cuadrado(b));
+        }
+
+        for (var i = 0; i < datos.length; i++) {
+            document.write("Centro ID: " + datos[i].id + " - ");
+            document.write("Nombre: " + datos[i].nombrecentro + " - ");
+            document.write("Localidad: " + datos[i].localidad + " - ");
+            document.write("Provincia: " + datos[i].provincia + "<br/>");
+        }
+
+
+    </script>
+</body>
+
+</html>

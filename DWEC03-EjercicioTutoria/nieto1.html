@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nieto</title>
+</head>
+<body>
+    <h1>Nieto</h1>
+    <input type="text" id="textonieto1">
+    <button onclick="mandarAbuelo()">Mandar al abuelo</button>
+    <button onclick="mandarTio()">Mandar al tio</button>
+    <script>
+        function mandarAbuelo() {
+            opener.opener.document.getElementById('textopadre').value = document.getElementById('textonieto1').value;
+        }
+
+        function mandarTio() {
+            opener.opener.hijo2.document.getElementById('textohijo2').value = document.getElementById('textonieto1').value;
+        }
+    </script>
+</body>
+</html>

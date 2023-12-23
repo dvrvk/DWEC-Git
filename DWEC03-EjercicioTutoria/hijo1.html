@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hijo 1</title>
+</head>
+<body>
+    <h1>Hijo 1</h1>
+    <input type="text" id="textohijo1" placeholder="Introduce texto">
+    <button onclick="crearNieto1()">Crear nieto 1 (hijo)</button>
+    <button onclick="mandarPadre()">Mandar al padre</button>
+    <button onclick="mandarHermano()">Mandar al hermano</button>
+    <button onclick="mandarNieto()">Mandar al nieto</button>
+    <script>
+        var nieto1 = null;
+
+        function crearNieto1() {
+            nieto1 = window.open("nieto1.html", "Nieto 1", "height=400,width=400");
+        }
+
+        function mandarPadre() {
+            opener.document.getElementById('textopadre').value = document.getElementById('textohijo1').value;
+        }
+
+        function mandarHermano() {
+            opener.hijo2.document.getElementById('textohijo2').value = document.getElementById('textohijo1').value;
+        }
+
+        function mandarNieto() {
+            nieto1.document.getElementById('textonieto1').value = document.getElementById('textohijo1').value;
+        }
+
+        
+
+    </script>
+</body>
+</html>

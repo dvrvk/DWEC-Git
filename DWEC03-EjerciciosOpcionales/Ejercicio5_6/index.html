@@ -1,0 +1,36 @@
+
+<html>
+    <head>
+        <title>Ejercicio 5 y 6</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            /*
+             5. Crea una página HTML vacía que cree con JavaScript un nuevo elemento HTML de tipo
+             párrafo con el identificador “demo” con el contenido “primero”. 
+             */
+            const parrafo = document.createElement('P');
+            parrafo.textContent = "primero";
+            parrafo.setAttribute('id', 'demo');
+            document.body.appendChild(parrafo);
+            /*
+             6. Sobre el ejercicio anterior incrementa el contenido del elemento párrafo con identificador
+             demo con el texto adicional “algo más”.
+             */
+            parrafo.textContent += ' algo más';
+
+            // SOLUCIÓN
+            /*
+             
+             var eleLogo= document.createElement("p");
+             eleLogo.innerHTML = "primero";
+             eleLogo.id = "demo";
+             document.body.appendChild(eleLogo);
+             document.getElementById("demo").innerHTML+=" algo mas";
+    
+             */
+        </script>
+    </body>
+</html>

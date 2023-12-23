@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taquillas</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var taquillas = [];
+        var numTaquillasLibres = 0;
+
+        for (let altura = 0; altura < 10; altura++) {
+            taquillas[altura] = new Array(4);
+            for (let posTaquilla = 0; posTaquilla < 4; posTaquilla++) {
+                taquillas[altura][posTaquilla] = "";
+            }
+        }
+
+        taquillas[0][3] = "Juan Perez";
+        taquillas[1][2] = "Luisa Olmo";
+        taquillas[6][0] = "Juan Castro";
+
+        for (let altura = 0; altura < taquillas.length; altura++) {
+            for (let posTaquilla = 0; posTaquilla < taquillas[altura].length; posTaquilla++) {
+                if (taquillas[altura][posTaquilla] == "") {
+                    numTaquillasLibres++;
+                }
+            }
+        }
+
+        function ocuparTaquillas(cantidad) {
+            let altura;
+            let posicion;
+
+            for (let i = 1; i <= cantidad; i++) {
+                do {
+                    altura = aleatorio(0, taquillas.length - 1);
+                    posicion = aleatorio(0, taquillas[altura].length - 1);
+                } while (taquillas[altura][posicion] !== "");
+
+                taquillas[altura][posicion] = "user" + i;
+            }
+        }
+
+        function aleatorio(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        ocuparTaquillas(4);
+    </script>
+</body>
+
+</html>

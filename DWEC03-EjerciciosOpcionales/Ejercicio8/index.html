@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 8</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            button {
+                display: block;
+                margin: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="contenido">Hola tengo 19 años</p>
+        <div id="res"></div>
+        <button id="bt1">Primera o</button>
+        <button id="bt2">Última o</button>
+        <button id="bt3">Primera o a partir del 3</button>
+        <button id="bt4">Search o</button>
+        <button id="bt5">Search o desde 3</button>
+        <button id="bt6">Cadena 5-9 slice</button>
+        <button id="bt7">Cadena 5-6 slice-final</button>
+        <button id="bt8">Cadena 5-6 substring-final</button>
+        <button id="bt9">Remplaza 19-diecinueve</button>
+        <button id="bt10">Remplaza hola-Buenos días</button>
+        <button id="bt11">Mayúsculas</button>
+        <button id="bt12">Minúsculas</button>
+        <button id="bt13">To array</button>
+        
+        <script>
+            var texto = contenido.textContent;
+            
+            // 1. Un botón que al pulsarlo te diga en que posición está la primera ocurrencia de la letra “o”. (utiliza indexOf)
+            const bt1 = document.getElementById('bt1');
+            bt1.addEventListener('click', () => {
+                res.innerHTML = 'La primera "o" esta en la posición ' + texto.indexOf('o');
+            });
+
+            // 2. Un botón que al pulsarlo te diga en que posición está la última ocurrencia de la letra “o”. (utiliza lastIndexOf)
+            const bt2 = document.getElementById('bt2');
+            bt2.addEventListener('click', () => {
+                res.innerHTML = 'La última "o" esta en la posición ' + texto.lastIndexOf('o');
+            });
+
+            // 3. Un botón que al pulsarlo te diga en que posición está la primera ocurrencia de la letra “o” desde la posición 3. (utiliza indexOf) 
+            const bt3 = document.getElementById('bt3');
+            bt3.addEventListener('click', () => {
+                res.innerHTML = 'La primera "o" a partir de la 3ª posición, esta en la posición ' + texto.indexOf('o', 3);
+            });
+
+            // 4. Un botón que al pulsarlo te diga en que posición está la primera ocurrencia de la letra “o”. (utiliza search)
+            const bt4 = document.getElementById('bt4');
+            bt4.addEventListener('click', () => {
+                res.innerHTML = 'La primera "o" esta en la posición ' + texto.search('o');
+            });
+
+            // 5. Un botón que al pulsarlo te diga en que posición está la primera ocurrencia de la letra “o” desde la posición 3. (utiliza search, ¿se puede?) 
+            // Según na documentación W3School -> The search() cannot take a start position argument.
+            // https://www.w3schools.com/jsref/jsref_search.asp
+            const bt5 = document.getElementById('bt5');
+            bt5.addEventListener('click', () => {
+                res.innerHTML = 'The search() cannot take a start position argument';
+            });
+
+            //6. Un botón que al pulsarlo te devuelva la cadena que hay desde la posición 5 a la 9 (excluida). (utiliza slice)
+            const bt6 = document.getElementById('bt6');
+            bt6.addEventListener('click', () => {
+                res.innerHTML = texto.slice(5, 9);
+            });
+
+            // 7. Un botón que al pulsarlo te devuelva la cadena que hay desde la posición 5 a la 6 contando desde el final. (utiliza slice)
+            const bt7 = document.getElementById('bt7');
+            bt7.addEventListener('click', () => {
+                res.innerHTML = texto.slice(-6, -5);
+            });
+
+            // 8. Un botón que al pulsarlo te devuelva la cadena que hay desde la posición 5 a la 6 contando desde el final. 
+            // (utiliza substring, ¿se puede?, ¿por qué?)
+            const bt8 = document.getElementById('bt8');
+            bt8.addEventListener('click', () => {
+                // res.innerHTML = texto.substring(-6,-5); // No funciona con negativos
+                res.innerHTML = texto.substring(texto.length - 5, texto.length - 6)
+            });
+
+            // 9. Un botón que al pulsarlo te devuelva la misma cadena pero sustituyendo 19 por diecinueve. (utiliza replace)
+            const bt9 = document.getElementById('bt9');
+            bt9.addEventListener('click', () => {
+                res.innerHTML = texto.replace('19', 'diecinueve');
+            });
+
+            // 10. Un botón que al pulsarlo te devuelva la misma cadena pero sustituyendo hola por 
+            // “Buenos días”. (utiliza replace, con función non case-sensitive).
+            const bt10 = document.getElementById('bt10');
+            bt10.addEventListener('click', () => {
+                res.innerHTML = texto.replace(/hola/gi, 'Buenos días');
+            });
+
+            //11. Un botón que al pulsarlo te devuelva la misma cadena pero en mayúsculas. (utiliza toUpperCase).
+            const bt11 = document.getElementById('bt11');
+            bt11.addEventListener('click', () => {
+                res.innerHTML = texto.toUpperCase();
+            });
+            // 12. Un botón que al pulsarlo te devuelva la misma cadena pero en minúsculas. (utiliza toLowerCase).
+            const bt12 = document.getElementById('bt12');
+            bt12.addEventListener('click', () => {
+                res.innerHTML = texto.toLowerCase();
+            });
+
+            // 13. Un botón que devuelva un array. Este array debe tener cada una de las palabras de la
+            // frase. Recorre el array para mostrar cada uno de los elementos de este array.
+            const bt13 = document.getElementById('bt13');
+            bt13.addEventListener('click', () => {
+                const arr = texto.split(" ");
+                res.innerHTML = "<ul>";
+                arr.forEach(function (valor, indice) {
+                    res.innerHTML += `<li>[${indice}] - ${valor}</li>`;
+                });
+                res.innerHTML += "</ul>";
+            });
+
+        </script>
+
+    </body>
+
+</html>

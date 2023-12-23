@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 11</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        const num = 34;
+        const text = "" + num;
+        const text2 = num.toString();
+        
+        const p1 = document.createElement('P');
+        p1.innerHTML = `Número -> ${num} - Tipo: ${typeof(num)}`
+        document.body.appendChild(p1);
+        
+        const p2 = document.createElement('P');
+        p2.innerHTML = `String con "" + variable -> ${text} - Tipo: ${typeof(text)}`
+        document.body.appendChild(p2);
+        
+        const p3 = document.createElement('P');
+        p3.innerHTML = `String con toString()-> ${text2} - Tipo: ${typeof(text2)}`
+        document.body.appendChild(p3);
+         
+    </script>
+</html>

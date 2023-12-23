@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicio 7</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            img {
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            /*
+             7. Crea una página HTML vacía que cree con JavaScript un nuevo elemento HTML de tipo
+             imagen que su fuente sea una URL de Internet con un texto alternativo. Modifica la URL
+             para que no funcione. ¿Qué ocurre?, ¿por qué?
+            */
+            const imagen = document.createElement('IMG');
+            // Funciona
+            imagen.setAttribute('src', 'https://pbs.twimg.com/media/FDx191FXoAAf99a.jpg');
+            imagen.alt = "Meme programador estresado/envejecido"
+            // No funciona
+            //imagen.setAttribute('src', 'https://pbsimg.com/media/FDx191FXoAAf99a.jpg');
+            document.body.appendChild(imagen);
+            
+        </script>
+    </body>
+</html>

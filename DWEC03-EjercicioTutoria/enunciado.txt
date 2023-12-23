@@ -1,0 +1,22 @@
+Ejercicio comunicación entre ventanas
+1.	Tienes que crear 4 páginas HTML 
+◦ Una página HTML llamada padre.html con  lo siguiente:
+  ▪	Una caja de texto con identificador “textopadre”.
+  ▪	Un botón llamado “Crear hijo 1”. Al dar a este botón se creará una nueva ventana que cargue la página HTML hijo1.html.
+  ▪	Un botón llamado “Cerrar hijo 1”. Al dar a este botón se cerrará la ventana 1 creada.
+  ▪	Un botón llamado “Crear hijo 2”. Al dar a este botón se creará una nueva ventana que cargue la página HTML hijo2.html.
+  ▪	Un botón llamado “Mandar a hijo 1”. Al dar a este botón se mandará lo que haya en la caja de texto a la caja de texto que hay en hijo1.html, que tendrá como identificador “textohijo1”
+  ▪	Un botón llamado “Mandar a nieto 1”. Al dar a ese botón se mandará lo que haya en la caja de texto “textopadre” a la caja de texto que hay nieto1.html, que tendrá como identificador “textonieto1”
+◦ Otra página HTML llamada hijo1.html con lo siguiente:
+  ▪	Una caja de texto con identificador “textohijo1”
+  ▪	Un botón llamado “Crear nieto 1”. Al dar a este botón se creará una nueva ventana que cargue la página HTML nieto1.html.
+  ▪	Un botón llamado “Mandar a padre”. Al dar a este botón se mandará lo que haya en la caja de texto “textohijo1” a la caja de texto que hay en padre.html con identificador “textopadre”
+  ▪	Un botón llamado “Mandar a hermano”. Al dar a este botón se mandará lo que haya en la caja de texto “textohijo1” a la caja de texto que hay en hijo2.html con identificador “textohijo2”
+  ▪	Un botón llamado “Mandar a nieto (mi hijo)”. Al dar a este botón se mandará lo que haya en la caja de texto “textohijo1” a la caja de texto que hay en nieto1.html con identificador “textonieto1”
+◦ Otra página HTML llamada hijo2.html con lo siguiente:
+  ▪	Una caja de texto con identificador “textohijo2”
+  ▪	Un botón llamado “Mandar a sobrino”. Al dar a este botón se mandará lo que haya en la caja de texto a la caja de texto que hay en nieto1.html con identificador “textonieto1”
+◦ Otra página HTML llamada nieto1.html con lo siguiente:
+  ▪	Una caja de texto con identificador “textonieto1”
+  ▪	Un botón llamado “Mandar a abuelo (padre de mi padre)”. Al dar a este botón se mandará lo que haya en la caja de texto a la caja de texto que hay en padre.html, con identificador “textopadre”
+  ▪	Un botón llamado “Mandar a tio (hermano de mi padre)”. Al dar a este botón se mandará lo que haya en la caja de texto a la caja de texto que hay en hijo2.html con identificador “textohijo2”
