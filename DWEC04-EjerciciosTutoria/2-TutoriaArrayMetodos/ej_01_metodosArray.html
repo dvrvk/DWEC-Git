@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Métodos array</title>
+</head>
+<body>
+    <div class="container">
+        <div class="campo">
+            <label for="animal">Animal: </label>
+            <input type="text" name="animal" id="animal">
+        </div>
+        <div class="campo">
+            <input type="button" name="derecha" id="derecha" value="Derecha">
+            <input type="button" name="para_derecha" id="para_derecha" value="Parar derecha">
+        </div>
+        <div class="campo">
+            <input type="button" name="izquierda" id="izquierda" value="Izquierda">
+            <input type="button" name="para_izquierda" id="para_izquierda" value="Parar izquierda">
+        </div>
+        <div class="campo">
+            <input type="button" name="invertir" id="invertir" value="Invertir">
+            <input type="button" name="buscar" id="buscar" value="Buscar">
+        </div>
+        <div>
+            <p id="array"></p>
+            <p id="info"></p>
+        </div>
+        
+    </div>
+    <script>
+        let arrayAnim = ['león', 'lobo', 'zorro', 'pantera', 'leopardo', 'tiburon', 'aguila', 'buho','cocodrilo'];
+        
+        const arr = document.getElementById('array');
+        arr.innerHTML = arrayAnim.toString();
+
+        // Mover a la derecha
+        let  derecha_intervalo;
+
+        const btn_derech = document.getElementById('derecha');
+        btn_derech.addEventListener('click', derecha2seg);
+
+        function derecha() {
+            // Coge el primer último elemento y lo pone el primero
+            arrayAnim.unshift(arrayAnim.pop());
+            info.innerHTML = arrayAnim.toString();
+        }
+
+        function derecha2seg() {
+            derecha_intervalo = setInterval(derecha, 2000);
+        }
+
+        const btn_para_derecha = document.getElementById('para_derecha');
+        btn_para_derecha.addEventListener('click', () => {
+            clearInterval(derecha_intervalo);
+        });
+        
+        // Mover a la izquierda
+        let  izquierda_intervalo;
+
+        const btn_izq = document.getElementById('izquierda');
+        btn_izq.addEventListener('click', izq2seg);
+
+        function izquierda() {
+            // Coge el primer último elemento y lo pone el primero
+            arrayAnim.push(arrayAnim.shift());
+            info.innerHTML = arrayAnim.toString();
+        }
+
+        function izq2seg() {
+            izquierda_intervalo = setInterval(izquierda, 2000);
+        }
+
+        const btn_para_izq = document.getElementById('para_izquierda');
+        btn_para_izq.addEventListener('click', () => {
+            clearInterval(izquierda_intervalo);
+        });
+
+        // Invertir
+        const btn_invertir = document.getElementById('invertir');
+        btn_invertir.addEventListener('click', () => {
+            arrayAnim.reverse();
+            info.innerHTML = arrayAnim.join();
+        });
+
+        // Buscar en el array
+        const btn_buscar = document.getElementById('buscar');
+        btn_buscar.addEventListener('click', ()=> {
+            const input_animal = document.getElementById('animal');
+            if(arrayAnim.includes((input_animal.value).toLowerCase())) {
+                input_animal.style.background = 'green';
+            } else {
+                input_animal.style.background = 'red';
+            }
+        });
+        
+
+    </script>
+</body>
+</html>

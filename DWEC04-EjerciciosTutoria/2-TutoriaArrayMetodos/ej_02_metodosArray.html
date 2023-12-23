@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Métodos array</title>
+</head>
+<body>
+    <div class="container">
+        <div class="campo">
+            <label for="animal">Animal: </label>
+            <input type="text" name="animal" id="animal">
+        </div>
+        <div class="campo">
+            <input type="button" name="derecha" id="derecha" value="Derecha">
+            <input type="button" name="para_derecha" id="para_derecha" value="Parar derecha">
+        </div>
+        <div class="campo">
+            <input type="button" name="izquierda" id="izquierda" value="Izquierda">
+            <input type="button" name="para_izquierda" id="para_izquierda" value="Parar izquierda">
+        </div>
+        <div class="campo">
+            <input type="button" name="invertir" id="invertir" value="Invertir">
+            <input type="button" name="buscar" id="buscar" value="Buscar">
+        </div>
+        <div class="campo">
+            <label for="pos1">Posicion 1</label>
+            <input type="number" name="pos1" id="pos1">
+        </div>
+        <div class="campo"></div>
+            <label for="pos2">Posicion 2</label>
+            <input type="number" name="pos2" id="pos2">
+        </div>
+        <div>
+            <input type="button" id="mostrar" value="Mostrar Array">
+            <input type="button" id="extraer" value="Extraer pos1 a pos2">
+            <input type="button" id="insertar" value="Insertar en pos1">
+        </div>
+        <div>
+            <label for="numElem">Numero de elementos: </label>
+            <input type="number" id="numElem" min="1">
+        </div>
+        <div>
+            <input type="button" id="eliminar" value="Eliminar (Posición 1 - Número Elementos)">
+        </div>
+        <div>
+            <input type="button" id="sobreescribir" value="Sobreescribir (Posición 1 - Número Elementos - input animal)">
+        </div>
+        <div>
+            <p id="array"></p>
+            <p id="info"></p>
+        </div>
+        
+    </div>
+    <script>
+        let arrayAnim = ['león', 'lobo', 'zorro', 'pantera', 'leopardo', 'tiburon', 'aguila', 'buho','cocodrilo'];
+        
+        const arr = document.getElementById('array');
+        arr.innerHTML = arrayAnim.toString();
+
+        // Mover a la derecha
+        let  derecha_intervalo;
+
+        const btn_derech = document.getElementById('derecha');
+        btn_derech.addEventListener('click', derecha2seg);
+
+        function derecha() {
+            // Coge el primer último elemento y lo pone el primero
+            arrayAnim.unshift(arrayAnim.pop());
+            info.innerHTML = arrayAnim.toString();
+        }
+
+        function derecha2seg() {
+            derecha_intervalo = setInterval(derecha, 2000);
+        }
+
+        const btn_para_derecha = document.getElementById('para_derecha');
+        btn_para_derecha.addEventListener('click', () => {
+            clearInterval(derecha_intervalo);
+        });
+        
+        // Mover a la izquierda
+        let  izquierda_intervalo;
+
+        const btn_izq = document.getElementById('izquierda');
+        btn_izq.addEventListener('click', izq2seg);
+
+        function izquierda() {
+            // Coge el primer último elemento y lo pone el primero
+            arrayAnim.push(arrayAnim.shift());
+            info.innerHTML = arrayAnim.toString();
+        }
+
+        function izq2seg() {
+            izquierda_intervalo = setInterval(izquierda, 2000);
+        }
+
+        const btn_para_izq = document.getElementById('para_izquierda');
+        btn_para_izq.addEventListener('click', () => {
+            clearInterval(izquierda_intervalo);
+        });
+
+        // Invertir
+        const btn_invertir = document.getElementById('invertir');
+        btn_invertir.addEventListener('click', () => {
+            arrayAnim.reverse();
+            info.innerHTML = arrayAnim.join();
+        });
+
+        // Buscar en el array
+        const btn_buscar = document.getElementById('buscar');
+        btn_buscar.addEventListener('click', ()=> {
+            const input_animal = document.getElementById('animal');
+            if(arrayAnim.includes((input_animal.value).toLowerCase())) {
+                input_animal.style.background = 'green';
+            } else {
+                input_animal.style.background = 'red';
+            }
+        });
+
+        // Extraer - no se modifica el array
+        const btn_extraer = document.getElementById('extraer');
+        btn_extraer.addEventListener('click', ()=> {
+            let pos1 = parseInt(document.getElementById('pos1').value);
+            let pos2 = parseInt(document.getElementById('pos2').value);
+            info.innerHTML= arrayAnim.slice(pos1, pos2);
+        });
+
+        // Insertar
+        const btn_insertar = document.getElementById('insertar');
+        btn_insertar.addEventListener('click', ()=> {
+            let pos1 = parseInt(document.getElementById('pos1').value);
+            let animal = document.getElementById('animal').value;
+            arrayAnim.splice(pos1, 0, animal);
+            info.innerHTML = arrayAnim;
+        });
+
+        // Mostar - actualiza el valor del array original en su parrafo
+        const btn_mostrar = document.getElementById('mostrar');
+        btn_mostrar.addEventListener('click', ()=> {
+            array.innerHTML = arrayAnim;
+        });
+
+        // Eliminar - desde la pos1
+        const btn_eliminar = document.getElementById('eliminar');
+        btn_eliminar.addEventListener('click', ()=> {
+            let pos1 = parseInt(document.getElementById('pos1').value);
+            let numElem = parseInt(document.getElementById('numElem').value);
+            arrayAnim.splice(pos1, numElem);
+            info.innerHTML = arrayAnim;
+        });
+
+        // Sobreescribir - sustituye desde la pos1 en numElem por el input animal
+        const btn_sobreescribir = document.getElementById('sobreescribir');
+        btn_sobreescribir.addEventListener('click', ()=> {
+            let pos1 = parseInt(document.getElementById('pos1').value);
+            let numElem = parseInt(document.getElementById('numElem').value);
+            let animal = document.getElementById('animal').value;
+            arrayAnim.splice(pos1, numElem, animal);
+            info.innerHTML = arrayAnim;
+        });
+
+    </script>
+</body>
+</html>
