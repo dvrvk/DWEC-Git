@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <form action="servidor.php">
+        <label for="num">DNI (N-número, X-letra)</label>
+        <input type="text" name="num" id="num" placeholder="NNNNNNNN-X (guion opcional)">
+        <button type="button" id="comprobar">Comprobar</button>
+        <p id="info"></p>
+    </form>
+    <script>
+        document.getElementById("comprobar").addEventListener("click", ()=> {
+            let dato = document.getElementById("num").value;
+            let correcto = false;
+
+            const patron = /^\d{8}-?[A-Z]{1}$/;
+            const letras=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"];
+            const restodni = (parseInt(dato.substring(0,8)))%23;
+            const letradni = dato.substring(dato.length-1);
+            if(patron.test(dato) && letradni === letras[restodni]) {
+                correcto = true;
+            }
+
+            info.innerHTML = (correcto) ? "El DNI es correcto" : "El DNI NO es correcto";
+        })
+    </script>
+</body>
+</html>

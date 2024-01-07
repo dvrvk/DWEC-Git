@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="enter-to-class=""">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <form action="servidor.php">
+        <input type="text" name="num" id="num" placeholder="NNN-NN-NNN (guiones opcionales)">
+        <button type="button" id="comprobar">Comprobar</button>
+        <p id="info"></p>
+    </form>
+    <script>
+        document.getElementById("comprobar").addEventListener("click", ()=> {
+            let dato = document.getElementById("num").value;
+            const patron = /^\d{3}[\s-]?\d{2}[\s-]?\d{3}$/;
+            info.innerHTML = (patron.test(dato)) ? "El número es correcto" : "El número NO es correcto";
+        })
+    </script>
+</body>
+</html>

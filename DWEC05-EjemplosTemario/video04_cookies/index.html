@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre">
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass">
+        </div>
+        <div>
+            <button type="button" id="mostrar">Mostrar cookies</button>
+            <button type="button" id="eliminar">Eliminar cookies</button>
+        </div>
+        <div id="visitasDiv"></div>
+        <div id="info"></div>
+    </form>
+    <script>
+        window.addEventListener('load', iniciar);
+
+        function iniciar() {
+            if (confirm("¿Permites el uso de cookies?")) {
+                cargarCookies();
+                sumarVisitas();
+                mostrarVisitas();
+                nombre.addEventListener("blur", guardarCookie)
+                pass.addEventListener("blur", guardarCookie);
+                mostrar.addEventListener("click", mostrarCookies);
+                eliminar.addEventListener("click", eliminarCookies);
+            } else {
+                mostrar.disabled = true;
+                eliminar.disabled = true;
+            }
+
+        }
+
+        function eliminarCookies() {
+            const fechaAntigua = new Date(0);
+            let arrCookie = (document.cookie).split(";").map(cookie => cookie.trim());
+
+
+            arrCookie.forEach(cookie => {
+                [nombreCookie, valorCookie] = cookie.split("=");
+
+                document.cookie = nombreCookie + "=; expires=" + fechaAntigua;
+            })
+        }
+
+        function mostrarVisitas() {
+            let visitasCookie = leerCookie("visitas");
+            if (visitasCookie) {
+                visitasDiv.innerHTML = visitasCookie;
+            }
+        }
+
+        function sumarVisitas() {
+            let visitas = leerCookie("visitas");
+            if (visitas) {
+                visitas = parseInt(visitas) + 1;
+                document.cookie = "visitas=" + visitas;
+            } else {
+                document.cookie = "visitas=1;"
+            }
+        }
+
+        function cargarCookies() {
+            let nombreCookie = leerCookie("nombre");
+            if (nombreCookie) {
+                nombre.value = nombreCookie;
+            }
+
+            let passCookie = leerCookie("pass");
+            if (passCookie) {
+                pass.value = passCookie;
+            }
+
+        }
+
+        function guardarCookie(e) {
+            document.cookie = e.target.id + "=" + document.getElementById(e.target.id).value;
+        }
+
+        function mostrarCookies() {
+            info.innerHTML = "";
+            let nombreCookie = leerCookie("nombre");
+            info.innerHTML += (nombreCookie) ? ("La cookie nombre tiene un valor de " + nombreCookie + "<br>") : "No existe la cookie nombre<br>";
+
+            let passCookie = leerCookie("pass");
+            info.innerHTML += (passCookie) ? ("La cookie pass tiene un valor de " + passCookie + "<br>") : "No existe la cookie pass<br>";
+
+            let visitasCookie = leerCookie("visitas");
+            info.innerHTML += (visitasCookie) ? ("La cookie visitas tiene un valor de " + visitasCookie + "<br>") : "No existe la cookie visitas<br>";
+
+        }
+
+        function leerCookie(nombre) {
+            let respuesta = false;
+            let arrCookie = (document.cookie).split(";").map(cookie => cookie.trim());
+
+
+            arrCookie.forEach(cookie => {
+                [nombreCookie, valorCookie] = cookie.split("=");
+
+                if (nombreCookie == nombre) {
+                    respuesta = valorCookie;
+                }
+            })
+
+            return respuesta;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

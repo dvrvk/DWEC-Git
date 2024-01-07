@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+<body>
+    <script>
+        // Crear una cookie: nombre, fecha expiración UTC, edad máxima (max-edh) en segundos; ruta; dominio (como míunimo el valor)
+        document.cookie = "usuario = Diego Vázquez; expires='Tue Jan 02 2024 17:35:21 GMT+0100';  path=/"; // Al modificarlo es importante que copiemos el resto (sino la considera otra cookie)
+        document.cookie = "usuario2 = Sara Granados;"; // Dura el tiempo que este abierto el navegador
+
+        // Leer una cookie
+        let miCookie = document.cookie;
+        alert(miCookie); // Mostrara todos las cookie separadas por ;
+
+        // Modificar la cookie - sobreescribir
+        document.cookie = "usuario2 = Javier Serrano;";
+        alert(document.cookie); // Mostrara todos las cookie separadas por ;
+
+        // Eliminar una cookie - poner una fecha anterior
+        document.cookie = "usuario=Diego Vázquez; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
+        document.cookie = "usuario2=; expires=Thu, 01 Jan 1970 00:00:01 GMT";
+        alert(document.cookie)
+    </script>
+</body>
+</html>

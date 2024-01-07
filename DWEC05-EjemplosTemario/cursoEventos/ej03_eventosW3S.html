@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos W3C</title>
+</head>
+<body>
+    <h1>Modelo de eventos avanzados del W3C</h1>
+    <h3 id="w3c">Modelo del W3C</h3>
+    <h3 id="w3c_anonima">Modelo del W3C con funciones anónimas</h3>
+
+    <script>
+        // elemento.addEventListener("<evento_sin_on>", <funcion>,<false|true>) *fase de burbujeo: normalmente false
+        document.getElementById("w3c").addEventListener('click', saludarUnaVez, false);
+        // Puedo crear varios manejadores
+        document.getElementById("w3c").addEventListener('click', colorearse, false);
+        document.getElementById("w3c").addEventListener('mouseover', fondo, false);
+
+        function saludarUnaVez() {
+           alert("Hola caracola");
+           // Para que solo lo haga una vez
+           document.getElementById("w3c").removeEventListener("click", saludarUnaVez);
+        }
+
+        function colorearse() {
+            document.getElementById("w3c").style.color = "red";
+        }
+
+        function fondo() {
+            document.getElementById("w3c").style.color = "black";
+        }
+
+        // Funciones anónimas 
+        // elemento.addEventListener("<evento_sin_on>", function(){<codigo>}, false)
+        document.getElementById("w3c_anonima").addEventListener('click', function() {
+            this.style.background = "#C0C0C0";
+        }, false);
+    </script>
+</body>
+</html>

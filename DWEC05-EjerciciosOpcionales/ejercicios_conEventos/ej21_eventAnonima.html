@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 21</title>
+</head>
+<body>
+    <a href="https://www.alcobendas.org/es/portal.do?IDM=27&NM=1" id="enlace">Enlace Alcobendas</a>
+    <script>
+        // Repite el ejercicio 16 con funcion anonima
+        window.addEventListener('load', iniciar, false);
+        function iniciar() {
+            enlace.addEventListener("click", function() {
+                alert("Se va a abrir la url " + this.href);
+            }, false);
+        }
+    </script>
+</body>
+</html>

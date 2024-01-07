@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En linea</title>
+</head>
+<!-- Evento onload -->
+<body onload="alert('La página se ha cargado correctametne.')">
+    <!--Manejadores como atributo de una etiqueta XTHML-->
+   <h2 id="cab1" onclick="this.innerHTML='Javascript en XHTML'" onmouseover="this.style.background='red'" onmouseout="this.style.background='white'">Pulsa aquí para ver lo que se ejecuta</h2>
+   
+   <!--Manejadores como funciones externas-->
+   <h2 id="cab1" onclick="cambiar(this)">Pulsa aquí para ver lo que se ejecuta</h2>
+
+
+    <!-- Evitar la acción por default -->
+    <a href="http://www.google.com" onclick="alertar(); return false">google</a>
+
+    <!-- Evitar la acción por default preguntando -->
+    <a href="http://www.google.com" onclick="return preguntar()">google</a>
+    
+    <script>
+    function cambiar(obj) {
+        obj.innerHTML = "He pulsado, desde función externa.";
+    }
+
+    function alertar() {
+        alert("Vamos a google.")
+    }
+
+    function preguntar() {
+        return confirm("¿Quieres ir a google.com?");
+    }
+
+    </script>
+</body>
+</html>

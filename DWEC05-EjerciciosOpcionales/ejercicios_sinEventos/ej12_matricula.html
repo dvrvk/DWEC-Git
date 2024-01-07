@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 12</title>
+</head>
+<body>
+    <form action="servidor.php">
+        <label for="num">Matrícula (N-número, X-letra)</label>
+        <input type="text" name="num" id="num" placeholder="NNNN-XXX">
+        <button type="button" id="comprobar">Comprobar</button>
+        <p id="info"></p>
+    </form>
+    <script>
+        document.getElementById("comprobar").addEventListener("click", ()=> {
+            let dato = document.getElementById("num").value;
+            const patron = /^\d{4}-?\w{3}$/;
+            info.innerHTML = (patron.test(dato)) ? "La matricula es correcta" : "La matricula NO es correcta";
+        })
+    </script>
+</body>
+</html>

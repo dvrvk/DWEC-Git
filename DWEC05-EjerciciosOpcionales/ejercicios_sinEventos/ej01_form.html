@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercico 1</title>
+</head>
+<body>
+    <form id="formulario">
+        <input type="checkbox" id="c_madrid" name="c_madrid" 
+     value="Madrid">
+        <label for="c_madrid">Madrid</label><br>
+        <input type="checkbox" id="c_sevilla" name="c_sevilla" 
+     value="Sevilla" checked>
+        <label for="c_sevilla">Sevilla</label><br>
+        <input type="checkbox" id="c_cuenca" name="c_cuenca" 
+     value="Cuenca">
+        <label for="c_cuenca">Cuenca</label><br>
+        <div>
+            <button type="button" id="btnNum">Num Elementos</button>
+            <button type="button" id="btnCheck">Info-Checkbox</button>
+            <button type="button" id="btnCambios">Cambios</button>
+        </div>
+        <p id="info"></p>
+        
+     </form> 
+    <script>
+        // Crea un botón que al pulsarlo indique: 
+        
+        // a) num elementos del formulario. Propiedad elements[] del form. 
+        document.getElementById('btnNum').addEventListener("click", () => {
+            info.innerHTML = "Número de elementos del form es: " + formulario.elements.length;
+        })
+
+        // b) El atributo checked y defaultChecked de todos los elementos cjeckbox del formulario. Utiliza la propiedad elements[]
+        document.getElementById('btnCheck').addEventListener("click", () => {
+            info.innerHTML = "";
+            Array.from(formulario.elements).forEach(elem => {
+                if(elem.type == "checkbox") {
+                    info.innerHTML += "El checkbox " + elem.value + " tiene el ckecked = " + elem.checked + " y un defaultChecked = " + elem.defaultChecked + "<br>";
+                }
+            })
+        })
+        
+        // Ejercicio 2 - boton llamado cambios que indique que elementos checkbox han cambiado de como estaban originalmente (Utiliza checked y defaultChecked)
+        document.getElementById('btnCambios').addEventListener("click", () => {
+            info.innerHTML = "";
+            const cambios = [];
+            Array.from(formulario.elements).forEach(elem => {
+                if(elem.type == "checkbox" && elem.checked !== elem.defaultChecked) {
+                    cambios.push(elem.value);
+                }
+            })
+
+            info.innerHTML = (cambios.length > 0) ? "Checkbox con cambios: " + cambios : "No ha cambiado ninguno.";
+        }); 
+    </script>   
+</body>
+</html>

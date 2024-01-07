@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos W3C</title>
+</head>
+<body>
+    <h1>Modelo de eventos avanzados de Microsoft</h1>
+    <h3 id="ms">Modelo del Microsoft</h3>
+    <h3 id="ms_anonima">Modelo de Microsoft con funciones anónimas</h3>
+
+    <script>
+        // TODO ESTO ESTA OBSOLETO
+        // elemento.attachEvent("<evento_CON_on>", <funcion_sin_parentesis>) *fase de burbujeo: normalmente false
+        document.getElementById("ms").attachEvent('onclick', saludarUnaVez);
+        document.getElementById("ms").attachEvent('onclick', color);
+
+        function saludarUnaVez() {
+            alert("hola caracola");
+        }
+
+        function colorearse() {
+            document.getElementById("ms").style.color = "red";
+        }
+       
+    </script>
+</body>
+</html>

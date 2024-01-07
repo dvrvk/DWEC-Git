@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage y Cookies</title>
+</head>
+<body>
+    <h2>sessionStorage</h2>
+    <button id="crear">Crear</button>
+    <button id="mostrar">Mostrar</button>
+    <button id="modificar">Modificar</button>
+    <button id="eliminar">Eliminar</button>
+
+    <h2>localStorage</h2>
+    <button id="crearL">Crear</button>
+    <button id="mostrarL">Mostrar</button>
+    <button id="modificarL">Modificar</button>
+    <button id="eliminarL">Eliminar</button>
+
+    <h2>Cookies</h2>
+    <button id="crearC">Crear</button>
+    <button id="mostrarC">Mostrar</button>
+    <button id="modificarC">Modificar</button>
+    <button id="eliminarC">Eliminar</button>
+
+    <script>
+        document.getElementById('crear').addEventListener('click', crear);
+        document.getElementById('mostrar').addEventListener('click', mostrar);
+        document.getElementById('modificar').addEventListener('click', modificar);
+        document.getElementById('eliminar').addEventListener('click', eliminar);
+
+        function crear() {
+           sessionStorage.setItem('usuario','diego');
+           sessionStorage.setItem('email','diego@diego.com');
+        }
+
+        function mostrar() {
+            alert("usuario: " +  sessionStorage.getItem('usuario') + ", email: " + sessionStorage.getItem('email'));
+
+        }
+
+        function modificar() {
+            sessionStorage.setItem('usuario','diego2');
+            sessionStorage.setItem('email','diego2@diego.com');
+        }
+
+        function eliminar() {
+            sessionStorage.removeItem('usuario');
+            sessionStorage.removeItem('email');
+        }
+
+        // LocalStorage
+        document.getElementById('crearL').addEventListener('click', crearL);
+        document.getElementById('mostrarL').addEventListener('click', mostrarL);
+        document.getElementById('modificarL').addEventListener('click', modificarL);
+        document.getElementById('eliminarL').addEventListener('click', eliminarL);
+
+        function crearL() {
+           localStorage.setItem('usuario','diego');
+           localStorage.setItem('email','diego@diego.com');
+        }
+
+        function mostrarL() {
+            alert("usuario: " +  localStorage.getItem('usuario') + ", email: " + localStorage.getItem('email'));
+
+        }
+
+        function modificarL() {
+            localStorage.setItem('usuario','diego2');
+            localStorage.setItem('email','diego2@diego.com');
+        }
+
+        function eliminarL() {
+            localStorage.removeItem('usuario');
+            localStorage.removeItem('email');
+        }
+
+        // Cookies
+        document.getElementById('crearC').addEventListener('click', crearC);
+        document.getElementById('mostrarC').addEventListener('click', mostrarC);
+        document.getElementById('modificarC').addEventListener('click', modificarC);
+        document.getElementById('eliminarC').addEventListener('click', eliminarC);
+        
+        function crearC() {
+            document.cookie = "usuario=marko; expires=Sat, 30 Dec 2023 00:00:00 GMT; path=/;"
+        }
+
+        function mostrarC() {
+            alert(document.cookie);
+        }
+
+        function modificarC() {
+            document.cookie = "usuario=marko; expires=Sat, 31 Dec 2023 00:00:00 GMT; path=/;"
+        }
+
+        function eliminarC() {
+            // Coloco un año anterior
+            document.cookie = "usuario=marko; expires=Sat, 31 Dec 2022 00:00:00 GMT; path=/;"
+        }
+    </script>
+</body>
+</html>

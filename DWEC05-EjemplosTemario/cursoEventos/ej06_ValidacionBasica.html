@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validacion</title>
+    <script src="ej06_validacion.js"></script>
+    <style>
+        .error {
+            border: solid 2px red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form method="POST" id="miFormualrio">
+        <div>
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="telefono">Teléfono</label>
+            <input type="text" name="telefono" id="telefono">
+        </div>
+        <div>
+            <label for="fecha">Fecha nacimiento</label>
+            <input type="text" name="dia" id="dia" size="2">
+            <input type="text" name="mes" id="mes" size="2">
+            <input type="text" name="year" id="year" size="2">
+        </div>
+        <div>
+            <label>Sexo: </label>
+            <input type="radio" name="sexo" id="hombre" value="h">
+            <label for="hombre">Hombre</label>
+            <input type="radio" name="sexo" id="mujer" value="m">
+            <label for="hombre">mujer</label>
+        </div>
+        <div>
+            <label for="mayor">Mayor de 18: </label>
+            <input type="checkbox" name="mayor" id="mayor" value="mayor">
+        </div>
+        <div>
+            <input type="submit" value="Enviar" id="enviar">
+            <input type="reset" value="Limpiar" id="limpiar">
+        </div>
+    </form>
+
+</body>
+</html>

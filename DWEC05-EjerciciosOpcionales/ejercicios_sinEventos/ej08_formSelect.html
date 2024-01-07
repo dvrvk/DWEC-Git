@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+</head>
+
+<body>
+    <h2>La provincia seleccionada es: <span id="info"></span></h2>
+    <form action="servidor.php" id="formulario">
+        <label for="prov">Provincia</label>
+        <select name="prov" id="prov">
+            <option value="Caceres">Caceres</option>
+            <option value="Badajoz">Badajoz</option>
+        </select>
+        <button type="button" id="provincia">Provincia</button>
+    </form>
+    <h2>La/s provincia/s seleccionada es: <span id="info2"></span></h2>
+    <form action="servidor.php" id="formulario2">
+        <label for="prov2">Provincia2</label>
+        <select name="prov2" id="prov2" multiple>
+            <option value="Caceres">Caceres</option>
+            <option value="Badajoz">Badajoz</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Sevilla">Sevilla</option>
+        </select>
+        <button type="button" id="provincia2">Provincia2</button>
+    </form>
+    <script>
+        // A. Un botón llamado “Provincia” que al pulsarlo te salga en un encabezado de la página web qué provincia ha sido seleccionada por el usuario. Utiliza para ello el elemento options del objeto select, y la propiedad selectedIndex
+        document.getElementById("provincia").addEventListener("click", () => {
+            info.innerHTML = prov.options[prov.selectedIndex];
+        })
+        // B. Igual pero con selección múltiple
+        document.getElementById("provincia2").addEventListener("click", () => {
+            info2.innerHTML = Array.from(prov2.selectedOptions).map(opt => opt.value);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar</title>
+</head>
+<body>
+    <form>
+        <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+        <div>
+            <label for="textBuscar">Patrón a buscar: </label>
+            <input type="text" name="textBuscar" id="textBuscar">
+        </div>
+        <button type="button" name="btnBuscar" id="btnBuscar">Buscar</button>
+        <p id="info"></p>
+    </form>
+    <script>
+        window.load = iniciar();
+        function iniciar() {
+                document.getElementById("btnBuscar").addEventListener("click", () => {
+                    let texto = document.getElementById("texto").value;
+                    let textoBuscar = document.getElementById("textBuscar").value;
+                    let exp = new RegExp(textoBuscar, "gi");
+                    info.innerHTML = texto.match(exp);
+                });
+
+                
+        }
+    </script>
+</body>
+</html>

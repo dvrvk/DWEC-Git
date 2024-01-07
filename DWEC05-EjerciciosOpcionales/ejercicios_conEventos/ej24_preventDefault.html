@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 24</title>
+</head>
+<body id="mibody">
+    
+    <form>
+        <div>
+            <input type="checkbox" name="fruta" id="fruta" value="2 o mas veces">
+            <label for="fruta">¿Comes fruta dos veces o más?</label>
+        </div>
+        <div id="info"></div> 
+    </form>
+    <script>
+        window.addEventListener('load', iniciar, false);
+        function iniciar() {
+            let tam=80;
+            // Crear el evento
+            fruta.addEventListener("click", escribir, false);
+
+            function escribir(e) {
+                e.preventDefault();
+                
+                tam += 20;
+                info.innerHTML = "No me lo creo";
+                info.style.fontSize = tam + "%"
+            }
+        }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <a href="https://www.google.es/" onclick="return mayorEdad();">Enlace para mayores</a>
+    <script>
+        function mayorEdad() {
+            let edad = parseInt(prompt('¿Que edad tienes?'));
+
+            if(edad >= 18) {
+                return true;
+            } else {
+                alert("No puedes acceder a la página.")
+                return false;
+            }
+
+        }
+    </script>
+</body>
+</html>

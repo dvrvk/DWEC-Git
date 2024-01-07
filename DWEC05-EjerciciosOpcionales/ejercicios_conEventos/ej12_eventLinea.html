@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 11</title>
+</head>
+<body>
+    <a href="https://www.google.es/" onclick="return confirmar(event);">Google</a>
+    <script>
+        function confirmar(event){
+            let direccion = event.target.href;
+            return confirm(`¿Quieres abrir el enlace a ${direccion} ?`)
+        }
+    </script>
+</body>
+</html>

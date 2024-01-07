@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <form id="formulario" action="servidor.php">
+        <div>
+            <fieldset>
+                <legend>Actor preferido: </legend>
+                <input type="radio" name="actor" id="Willis" value="Walter Bruce Willis - 19 de Marzo de 1955" checked>
+                <label for="Willis">Willis</label>
+                <input type="radio" name="actor" id="Carry" value="James Eugene Jim Carrey - 17 de Enero de 1962">
+                <label for="Carry">Carry</label>
+                <input type="radio" name="actor" id="Tosar" value="Luis Tosar - 13 de Octubre de 1971">
+                <label for="Tosar">Tosar</label>
+            </fieldset>
+        </div>
+        <button type="button" id="mas">Más datos sobre el actor</button>
+    </form>
+    <script>
+        document.getElementById('mas').addEventListener("click", ()=> {
+            alert(formulario.actor.value);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 15</title>
+</head>
+<body>
+    <form>
+        <label for="nombre">Texto con 1 número, 1 letra mayúscula admitiendo Ñ</label>
+        <input type="text" name="nombre" id="nombre">
+        <button type="button" id="validar">Validar</button>
+        <p id="info"></p>
+    </form>
+    <script>
+/*
+Crea una página web con un input tipo text, y un botón que valide que el texto
+introducido por el usuario en este input tenga al menos un dígito numérico, y una letra
+mayúscula, admitiendo la Ñ como letra mayúscula
+*/
+        document.getElementById("validar").addEventListener("click", () => {
+            const patron = /([\d]+[A-ZÑ]+|[A-ZÑ]+[\d]+)/;
+            info.innerHTML = (patron.test(nombre.value)) ? "Correcto" : "Incorrecto";
+        })
+    </script>
+</body>
+</html>

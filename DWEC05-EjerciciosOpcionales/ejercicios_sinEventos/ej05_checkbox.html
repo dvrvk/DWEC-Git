@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <form id="formulario" name="formulario">
+        <div>
+            <input type="checkbox" id="fruta" name="fruta" value="2 veces o más de fruta">
+            <label for="fruta">¿Comes fruta 2 veces o más?</label>
+        </div>
+        <div>
+            <input type="checkbox" id="verdura" name="verdura" value="2 veces o más de verdura">
+            <label for="verdura">¿Comes verdura 2 veces o más?</label>
+        </div>
+        <div>
+            <input type="checkbox" id="legumbres" name="legumbres" value="2 veces o más de legumbres">
+            <label for="legumbres">¿Comes legumbres 3 veces o más?</label>
+        </div>
+        <div>
+            <input type="checkbox" id="deporte" name="deporte" value="2 veces o más de deporte">
+            <label for="deporte">Haces deporte 3 veces o más?</label>
+        </div>
+        <div>
+            <button type="button" id="vidaSana">Vida Sana</button>
+            <button type="button" id="vidaInsana">Vida Insana</button>
+        </div>
+        <p id="info"></p>
+    </form>
+    <script>
+        // Un botón llamado “Vida sana” que marque todos los checkbox del formulario (utiliza elements[])
+        document.getElementById("vidaSana").addEventListener("click", ()=> {
+            Array.from(formulario.elements).forEach(elem => {
+                if(elem.type == "checkbox") {
+                    elem.checked = true;
+                }
+            })
+        })
+
+        document.getElementById("vidaInsana").addEventListener("click", ()=> {
+            Array.from(formulario.elements).forEach(elem => {
+                if(elem.type == "checkbox") {
+                    elem.checked = false;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <form id="formulario">
+        <input type="radio" id="c_madrid" name="ciudad" value="Madrid">
+        <label for="c_madrid">Madrid</label><br>
+        <input type="radio" id="c_sevilla" name="ciudad" value="Sevilla" 
+ checked>
+        <label for="c_sevilla">Sevilla</label><br>
+        <input type="radio" id="c_cuenca" name="ciudad" value="Cuenca">
+        <label for="c_cuenca">Cuenca</label><br>
+        <div>
+            <button type="button" id="btnRadio">Num radio</button>
+            <button type="button" id="btnCheck">Info checked</button>
+            <button type="button" id="btnValue">Valor radio</button>
+        </div>
+        <p id="info"></p>
+    </form>
+    <script>
+        // boton para saber el numero de elemntos del radio button que aparece en el formulario sin utilizar elements
+        document.getElementById('btnRadio').addEventListener("click", () => {
+            info.innerHTML = "El número de radiobutton es " + formulario.ciudad.length;
+        })
+
+        // El atributo checked y defaultChecked de todos los elementos radioButton del formulario. No utilizar la propiedad elements[] del formulario
+        document.getElementById('btnCheck').addEventListener("click", () => {
+            info.innerHTML = "";
+            formulario.ciudad.forEach(ciudad => {
+                info.innerHTML += "El radioButton " + ciudad.value + " tiene el ckecked = " + ciudad.checked + " y un defaultChecked = " + ciudad.defaultChecked + "<br>";
+            })
+        })
+
+        // Valor del radiobutton seleccionado
+        document.getElementById('btnValue').addEventListener("click", () => {
+            info.innerHTML = "El valor del radiobutton seleccionado es " + formulario.ciudad.value;
+        });
+        
+    </script>
+</body>
+</html>

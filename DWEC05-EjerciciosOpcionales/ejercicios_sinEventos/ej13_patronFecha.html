@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 13</title>
+</head>
+<body>
+    <form action="servidor.php">
+        <label for="num">Fecha (dd-mm-aaaa)</label>
+        <input type="text" name="num" id="num" placeholder="dd-mm-aaaa">
+        <button type="button" id="comprobar">Comprobar</button>
+        <p id="info"></p>
+
+        <label for="num2">Fecha (dd-mm-aaaa)</label>
+        <input type="text" name="num2" id="num2" placeholder="dd-mm-aaaa">
+        <button type="button" id="comprobar2">Comprobar</button>
+        <p id="info2"></p>
+    </form>
+    <script>
+    /*
+        Con un botón llamado comprobar. De forma que cuando el usuario hace click en el
+        botón se valida lo introducido por el usuario en la caja de texto, después de validar se
+        informa al usuario de si el dato introducido es correcto o no. Para validar el dato
+        introducido por el usuario necesitarás utilizar los métodos de expresiones regulares y
+        condicionales.
+    */
+   /*
+    Igual que el apartado A) pero utilizando solo patrones, y permitiendo poner fechas
+    incorrectas del tipo 30-02-2020
+   */
+        document.getElementById("comprobar").addEventListener("click", ()=> {
+            let dato = document.getElementById("num").value;
+            const patron = /^(0[1-9]|[12][0-9]|3[01])-?(0[1-9]|1[0-2])-?\d{4}$/;
+            info.innerHTML = (patron.test(dato)) ? "La fecha es correcta" : "La fecha NO es correcta";
+        })
+/*
+        C) Igual que el apartado A) pero utilizando solo patrones, y sin permitir fechas incorrectas
+        del tipo 30-02-2020, 31-04-2020, etc.
+*/ 
+        document.getElementById("comprobar2").addEventListener("click", ()=> {
+            let dato = document.getElementById("num2").value;
+            const patron = /^(((0[1-9]|[1-2][0-9]|3[0-1])-?(0[13578]|1[02]))|((0[1-9]|[1-2][0-9]|30)-?(0[469]|11]))|((0[1-9]|[1-2][0-9])-?02))-?\d{4}$/;
+            info2.innerHTML = (patron.test(dato)) ? "La fecha es correcta" : "La fecha NO es correcta";
+        })
+    </script>
+</body>
+</html>

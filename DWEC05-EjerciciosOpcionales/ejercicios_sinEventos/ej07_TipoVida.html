@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <form id="formulario" name="formulario">
+        <fieldset>
+            <legend>Hábitos</legend>
+            <div>
+                <input type="checkbox" id="fruta" name="fruta" value="2 veces o más de fruta">
+                <label for="fruta">¿Comes fruta 2 veces o más?</label>
+            </div>
+            <div>
+                <input type="checkbox" id="verdura" name="verdura" value="2 veces o más de verdura">
+                <label for="verdura">¿Comes verdura 2 veces o más?</label>
+            </div>
+            <div>
+                <input type="checkbox" id="legumbres" name="legumbres" value="2 veces o más de legumbres">
+                <label for="legumbres">¿Comes legumbres 3 veces o más?</label>
+            </div>
+            <div>
+                <input type="checkbox" id="deporte" name="deporte" value="2 veces o más de deporte">
+                <label for="deporte">Haces deporte 3 veces o más?</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Tipo de vida</legend>
+            <input type="radio" name="vida" id="sana" value="Vida sana">
+            <label for="sana">Vida Sana</label>
+            <input type="radio" name="vida" id="pocosana" value="Vida un poco insana">
+            <label for="pocosana">Vida un poco insana</label>
+            <input type="radio" name="vida" id="insana" value="Vida insana">
+            <label for="insana">Vida insana</label>
+        </fieldset>
+        <button type="button" id="tipoVida">Consultar tipo de vida</button>
+        <p id="info"></p>
+    </form>
+    <script>
+        document.getElementById("tipoVida").addEventListener("click", () => {
+            let checked = 0;
+            Array.from(formulario.elements).forEach(elem => {
+                if(elem.type == "checkbox" && elem.checked) {
+                    checked++;
+                }
+            });
+
+            switch (checked) {
+                case 3,4:
+                    sana.checked = true;
+                    break;
+                case 2:
+                    pocosana.checked = true;
+                    break;
+                default:
+                    insana.checked = true;
+            }
+        })
+    </script>
+</body>
+
+</html>

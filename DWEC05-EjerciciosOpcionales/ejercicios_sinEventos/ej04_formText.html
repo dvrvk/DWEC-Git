@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <form id="formulario" name="formulario">
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos">
+        </div>
+        <div>
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" name="dni">
+        </div>
+        <div>
+            Sexo:
+            <label for="hombre">Hombre</label>
+            <input type="radio" name="sexo" id="hombre" value="hombre">
+            <label for="mujer">Mujer</label>
+            <input type="radio" name="sexo" id="mujer" value="mujer">
+        </div>
+        <div>
+            <label for="fecha">Fecha nacimiento</label>
+            <input type="date" name="fecha" id="fecha">
+        </div>
+        <div>
+            <button type="button" id="limpiar">Limpiar JS Elements</button>
+            <button type="button" id="btnreset">Limpiar JS</button>
+            <input type="reset" value="Limpiar HTML">
+        </div>
+        <p id="info"></p>
+    </form>
+    <script>
+        // Un botón llamado “Botón 1” que recorra todos estos elementos del formulario y los deja vacíos (los tipo text en blanco, los radio button sin seleccionar, y el date sin completar) utilizando la propiedad elements[] del formulario.
+        document.getElementById('limpiar').addEventListener("click", () => {
+            Array.from(formulario.elements).forEach(elem=> {
+                if(elem.type == "text") {
+                    elem.value = "";
+                } else if(elem.type == "radio") {
+                    elem.checked = false;
+                } else if(elem.type == "date") {
+                    elem.value = "";
+                }
+
+            })
+        })
+        
+        // . Un botón llamado “Botón 2” que resetee todos los campos del formulario, utilizando el método reset() del formulario.
+        document.getElementById('btnreset').addEventListener("click", () => {
+            formulario.reset();
+        })
+    </script>
+</body>
+</html>
